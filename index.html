@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SRC API Browser</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="links">
+      <a href="warning.html"
+        ><span class="material-symbols-outlined warning" style="color: black">
+          settings
+        </span></a
+      >
+      <a href="info.html">
+        <span class="material-symbols-outlined" style="color: black">
+          info
+        </span>
+      </a>
+    </div>
+    <div class="info-wrapper">
+      <p>website made by NachoMC#9755 (discord)</p>
+      <p>
+        Type in the abbreviation or the name of any game on SRC to load up the
+        leaderboard.
+      </p>
+      <input
+        type="text"
+        placeholder="Super Mario Odyssey"
+        id="input-box"
+        list="game-options"
+      />
+      <datalist id="game-options"></datalist>
+      <div class="btn" onclick="getLinks()"><span>Submit Game</span></div>
+      <div id="cat-input">
+        <input
+          type="text"
+          id="cat-input-box"
+          placeholder="Any%"
+          list="cat-options"
+          onkeyup="getSubCategories()"
+        />
+        <input
+          type="text"
+          id="subcat-input-box"
+          placeholder="1P"
+          list="subcat-options"
+        />
+        <datalist id="cat-options"> </datalist>
+        <datalist id="subcat-options"></datalist>
+      </div>
+      <div class="btn" onclick="getLeaderboard(); clearLeaderboard()">
+        <span>Submit Category</span>
+      </div>
+    </div>
+    <div id="lb-wrapper">
+      <span>Place</span><span>Player</span><span>Time</span><span>Date</span
+      ><span>Link</span>
+      <span id="loading">Loading...</span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
